@@ -23,11 +23,11 @@ CXXFLAGS += -I/usr/local/include/grpc++
 CXXFLAGS += -I/usr/local/include/grpcpp
 CXXFLAGS += -I/home/hyuan/git/grpc/third_party/protobuf/src
 ifeq ($(SYSTEM),Darwin)
-LDFLAGS += -L/usr/local/lib `pkg-config --libs protobuf grpc++ grpc`\
+LDFLAGS += -L/usr/local/lib -lcurl `pkg-config --libs protobuf grpc++ grpc`\
            -lgrpc++_reflection\
            -ldl
 else
-LDFLAGS += -L/usr/local/lib `pkg-config --libs protobuf grpc++ grpc`\
+LDFLAGS += -L/usr/local/lib -lcurl `pkg-config --libs protobuf grpc++ grpc`\
            -Wl,--no-as-needed -lgrpc++_reflection -Wl,--as-needed\
            -ldl
 endif

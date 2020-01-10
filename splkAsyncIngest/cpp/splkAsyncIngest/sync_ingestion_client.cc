@@ -95,7 +95,7 @@ int main(int argc, char** argv) {
   std::string user("world");
     auto start = std::chrono::high_resolution_clock::now();
 
-  for(long long i=0;i<repeatInt;i++) {
+  for(long long i=1;i<=repeatInt;i++) {
     std::string reply = greeter.SayHello(user);
     if(i % 100 == 0) {
       //std::cout << " counterSuc is " << counterSuc << ", counterFail is " << counterFail << std::endl;
